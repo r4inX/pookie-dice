@@ -336,7 +336,7 @@ specname:\"row\"\
 items:[
 {
 customProperties:"attributes:{\
-class:\"col-md-8\"\
+class:\"col-md-10\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -366,7 +366,7 @@ uuid:"8C667E0F-7ED2-4586-B342-18279B5AAFF2"
 },
 {
 customProperties:"attributes:{\
-class:\"col-md-4\"\
+class:\"col-md-2\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -383,7 +383,7 @@ y:1
 styleClass:"default-align h3"
 },
 location:"1,1",
-name:"datalabelc",
+name:"lblScoreRound",
 styleClass:"default-align h3",
 typeName:"bootstrapcomponents-datalabel",
 typeid:47,
@@ -410,7 +410,7 @@ specname:\"row\"\
 items:[
 {
 customProperties:"attributes:{\
-class:\"col-md-8\"\
+class:\"col-md-10\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -440,7 +440,7 @@ uuid:"62F74F65-8A8F-4512-B357-F59D09D76169"
 },
 {
 customProperties:"attributes:{\
-class:\"col-md-4\"\
+class:\"col-md-2\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -457,7 +457,7 @@ y:1
 styleClass:"default-align h3"
 },
 location:"1,1",
-name:"datalabel",
+name:"lblScoreTotal",
 styleClass:"default-align h3",
 typeName:"bootstrapcomponents-datalabel",
 typeid:47,
@@ -484,7 +484,7 @@ specname:\"row\"\
 items:[
 {
 customProperties:"attributes:{\
-class:\"col-md-4\"\
+class:\"col-md-2\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -501,7 +501,7 @@ y:1
 styleClass:"default-align h3"
 },
 location:"1,1",
-name:"datalabelcc",
+name:"lblScoreSelected",
 styleClass:"default-align h3",
 typeName:"bootstrapcomponents-datalabel",
 typeid:47,
@@ -514,7 +514,7 @@ uuid:"16573C6C-4125-4D1F-A898-230099009CC4"
 },
 {
 customProperties:"attributes:{\
-class:\"col-md-8\"\
+class:\"col-md-10\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -617,14 +617,17 @@ x:1,
 y:1
 },
 media:"64C5CC87-82F2-4B52-814C-EB330232AF4F",
-styleClass:"btn-pookie-small"
+onActionMethodID:"AB3BDA3D-3CCA-488E-8573-8E008CC10D68",
+styleClass:"btn-pookie-small",
+visible:false
 },
 location:"1,1",
-name:"imagemedia",
+name:"btnRoll",
 styleClass:"btn-pookie-small",
 typeName:"bootstrapcomponents-imagemedia",
 typeid:47,
-uuid:"A6396946-7ACC-42FA-B991-AED0D850D177"
+uuid:"A6396946-7ACC-42FA-B991-AED0D850D177",
+visible:false
 }
 ],
 location:"1,1",
@@ -660,15 +663,18 @@ location:{
 x:1,
 y:1
 },
-media:"42CD9532-FA21-4377-9A82-8D52C0067C6A",
-styleClass:"btn-pookie-small"
+media:"A212D68A-C6E8-4813-8FA6-E8D667E15933",
+onActionMethodID:"5CD9058E-DC13-4EDB-AC60-0F5436116F2B",
+styleClass:"btn-pookie-small",
+visible:false
 },
 location:"1,1",
-name:"imagemediacc",
+name:"btnKeepAndPass",
 styleClass:"btn-pookie-small",
 typeName:"bootstrapcomponents-imagemedia",
 typeid:47,
-uuid:"6568492E-EF3A-400C-8FAB-390B8DA785FF"
+uuid:"9667FD41-93D4-46DC-8DEA-4CB8C3766B5E",
+visible:false
 }
 ],
 location:"1,1",
@@ -701,18 +707,21 @@ items:[
 {
 json:{
 location:{
-x:1,
-y:1
+x:2,
+y:2
 },
-media:"A212D68A-C6E8-4813-8FA6-E8D667E15933",
-styleClass:"btn-pookie-small"
+media:"42CD9532-FA21-4377-9A82-8D52C0067C6A",
+onActionMethodID:"88598939-B614-43B4-9464-F8DCFAFBA721",
+styleClass:"btn-pookie-small",
+visible:false
 },
-location:"1,1",
-name:"imagemediac",
+location:"2,2",
+name:"btnKeepAndRoll",
 styleClass:"btn-pookie-small",
 typeName:"bootstrapcomponents-imagemedia",
 typeid:47,
-uuid:"9667FD41-93D4-46DC-8DEA-4CB8C3766B5E"
+uuid:"6568492E-EF3A-400C-8FAB-390B8DA785FF",
+visible:false
 }
 ],
 location:"1,1",
