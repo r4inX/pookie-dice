@@ -107,6 +107,7 @@ function resetDice() {
 		elements[btnName].media = 'media:///dices/hearts/1.png'
 		elements[btnName].removeStyleClass('dice-selected')
 		elements[btnName].removeStyleClass('btn-muted')
+		elements[btnName].enabled = true
 	}
 }
 
@@ -120,6 +121,8 @@ function rollDice() {
 		}
 		updateFormDice()
 	}
+	
+	
 }
 
 /**
@@ -155,15 +158,12 @@ function onDiceClicked(event) {
 	var pos			= parseInt(clickedDice.substr(2)) - 1
 	
 	// --- check if we can select this value ---
-	application.output(clickedDice + ' -> ' + diceValue)
-	
 	if(_selectedValues[pos] != null){
         _selectedValues[pos] = null
 	}else{
 		_selectedValues[pos] = diceValue
 	}
 	
-	application.output(_selectedValues)
 	calculateScore()
 	
 	
@@ -179,9 +179,11 @@ function onDiceClicked(event) {
 }
 
 /**
+ * @param {Boolean} [forEoG]
+ * 
  * @properties={typeid:24,uuid:"686E73B2-3884-44CD-AAE3-FEB6976DAD26"}
  */
-function calculateScore(){
+function calculateScore(forEoG){
 	var tempScore = 0;
 	
 	var ones 	= [];
@@ -192,7 +194,9 @@ function calculateScore(){
 	var sixes 	= [];
 	var scoreArray = [];
 	
-	for (var i = 0; i < 6; i++) {							//test out totals, etc.
+	
+	if(!forEoG){
+		for (var i = 0; i < 6; i++) {							//test out totals, etc.
 			switch (_selectedValues[i]) {
 				case 1: ones.push(1);
 								break;
@@ -207,7 +211,39 @@ function calculateScore(){
 				case 6: sixes.push(6);
 								break;
 			}
+		}
+	}else{
+		for (var j = 0; j < 6; j++) {
+			
+			if(_selectedValues[j] != null){
+				application.output('SKIPPING value ' + _selectedValues[j])
+				continue;
+			}
+			
+			switch (_diceValues[j]) {
+			case 1:
+				ones.push(1);
+				break;
+			case 2:
+				twos.push(2);
+				break;
+			case 3:
+				threes.push(3);
+				break;
+			case 4:
+				fours.push(4);
+				break;
+			case 5:
+				fives.push(5);
+				break;
+			case 6:
+				sixes.push(6);
+				break;
+			}
+		}
 	}
+	
+
 	switch (ones.length) {
 		case 1: scoreArray[0] = 100; break;
 		case 2: scoreArray[0] = 200; break;
@@ -254,9 +290,17 @@ function calculateScore(){
 		case 6: scoreArray[5] = 2400; break;
 		default: scoreArray[5] = 0;
 	}
+	
 	tempScore = scoreArray[0] + scoreArray[1] + scoreArray[2] + scoreArray[3] + scoreArray[4] + scoreArray[5];
-	application.output('Score: ' + tempScore)
-	_scoreSelected = tempScore
+	if(forEoG){
+		application.output('forEoG Score could be: ' + tempScore)
+		return tempScore
+	}else{
+		_scoreSelected = tempScore
+		return tempScore
+	}
+	
+
 }
 
 /**
@@ -314,9 +358,16 @@ function onAction_KeepRoll(event) {
 			elements['di' + (i+1)].addStyleClass('btn-muted')
 		}
 	}
-	
+	if(calculateScore(true) == 0){
+		plugins.dialogs.showErrorDialog('END OF GAME','YOU HOT ROLLED, END OF ROLL!')
+	}
+		
+		
 	updateFormDice()
 	
 	_selectedValues = [null,null,null,null,null,null]
+
+	// --- check for end-of-game (if we cant score) --
+	
 	
 }
