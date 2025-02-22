@@ -1,0 +1,100 @@
+// import of the custom servoy theme properties that will import the hidden servoy theme, this imported file is for customizing the default servoy theme properties 
+@import 'custom_servoy_theme_properties.less';
+@import url(https://fonts.googleapis.com/css?family=Sigmar:100,300,400,500,700,900&display=swap);
+
+
+/* Start https://www.cursors-4u.com */ 
+.bg {
+	background-image: url(https://img.freepik.com/free-vector/valentine-theme-with-hearts-pink-sky_1308-38030.jpg?t=st=1740236097~exp=1740239697~hmac=bfd5db937e45f2d59d2e85c8bde01534dcd14c4338cb6744981aa8547c9b45a7&w=1380);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+
+.pink {
+	color: pink; 
+}
+
+.cursor-butterfly {
+	cursor: url(https://cur.cursors-4u.net/nature/nat-10/nat946.ani), url(https://cur.cursors-4u.net/nature/nat-10/nat946.png), auto !important;
+} 
+
+
+/* Add your custom less/css to this file you can use the same less properties that are specified in the above properties.less */
+
+.text-right{
+	text-align: right;
+}
+
+
+/* buttons that look like dices and the select */
+.btn-pookie {
+	/*width: 300px;*/
+	max-height: 150px;
+	border-radius: 20px;
+	/*cursor: pointer;*/
+	transition:transform 0.25s ease;
+	margin: auto;    
+    display: block;
+}
+
+.btn-pookie-small {
+	max-height: 75px;
+	margin: auto;    
+    display: block;
+    transition:transform 0.25s ease;
+}
+
+
+.dice {
+	transition:transform 0.25s ease;
+	width: 125px;
+	height: 125px;
+	margin: auto;    
+    display: block;
+}
+
+
+.dice-selected {
+	background-color: blue;
+	border: 1.5px dashed blue;
+	border-radius: 20px;
+	
+}
+
+.btn-pookie:hover, .btn-pookie-small:hover, .dice:hover {
+    -webkit-transform:scale(1.5); /* or some other value */
+    transform:scale(1.5);
+}
+
+
+
+.dice-big-fa {
+	font-size: 55px;
+}
+
+
+.neon-text {
+    font-size: 4rem;
+    color: pink;
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
+    }
+    100% {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
+    }
+}
+
+img {
+  display: block;
+  margin: auto;
+  /* width: 50%; */
+}
